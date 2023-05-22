@@ -3,7 +3,7 @@
  * @Author: zhangchong zc16607@gmail.com
  * @Date: 2022-12-30 10:26:21
  * @LastEditors: zhangchong zc16607@gmail.com
- * @LastEditTime: 2023-01-11 14:51:31
+ * @LastEditTime: 2023-05-22 17:03:29
 -->
 <template>
   <div class="tab-control-wrap">
@@ -168,6 +168,7 @@ onMounted(() => {
   width: 16px;
   height: 16px;
   vertical-align: middle;
+  display: inline;
 }
 .tab-title::after {
   content: "";

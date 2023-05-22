@@ -3,7 +3,7 @@
  * @Author: zhangchong zc16607@gmail.com
  * @Date: 2022-12-29 17:05:04
  * @LastEditors: zhangchong zc16607@gmail.com
- * @LastEditTime: 2023-01-11 17:36:14
+ * @LastEditTime: 2023-05-22 16:59:48
  */
 import { TabbedWindow } from "./tabbed-window.js";
 import { nativeTheme, screen, dialog, app, ipcMain, webContents } from 'electron'
@@ -21,7 +21,7 @@ export async function createTabbedWin(stockList) {
 
   if (process.env.WEBPACK_DEV_SERVER_URL == null) {
     createProtocol(global.common.APP_SCHEME);
-    baseUrl = `${global.common.APP_SCHEME}://./index.html`; // Load "index.html" if the dev server URL does not exist.
+    baseUrl = `${global.common.APP_SCHEME}://./index.html/`; // Load "index.html" if the dev server URL does not exist.
   } else {
     baseUrl = process.env.WEBPACK_DEV_SERVER_URL; // Load the dev server URL if it exists.
   }
@@ -52,7 +52,7 @@ export async function createTabbedWin(stockList) {
     blankPage: global.common.blankPage,
     blankTitle: zhCN.newTabItem,
     controlHeight: global.common.TAB_BAR_HEIGHT,
-    controlPanel: `${baseUrl}/#/tabBar`,
+    controlPanel: `${baseUrl}#/tabbar`,
     debug: process.env.NODE_ENV === global.common.DEV,
     height:
       winHeight >= global.common.MIN_WIN_HEIGHT

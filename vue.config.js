@@ -3,7 +3,7 @@
  * @Author: zhangchong zc16607@gmail.com
  * @Date: 2022-12-30 11:56:06
  * @LastEditors: zhangchong zc16607@gmail.com
- * @LastEditTime: 2023-01-11 18:00:46
+ * @LastEditTime: 2023-05-22 16:11:06
  */
 const Components = require('unplugin-vue-components/webpack')
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
@@ -26,6 +26,12 @@ module.exports = {
       // 自动按需导入elementPlus图标
       require('unplugin-icons/webpack')({ autoInstall: true, }),
     ],
+  },
+  chainWebpack: (config) => {
+    config.plugin('html').tap((args) => {
+      args[0].title = 'electron多tab页demo'
+      return args
+    })
   },
   pluginOptions: {
     electronBuilder: {

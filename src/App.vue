@@ -3,7 +3,7 @@
  * @Author: zhangchong zc16607@gmail.com
  * @Date: 2022-12-29 16:14:15
  * @LastEditors: zhangchong zc16607@gmail.com
- * @LastEditTime: 2023-01-09 13:57:46
+ * @LastEditTime: 2023-05-22 16:13:14
 -->
 <template>
   <router-view v-slot="{ Component }">
@@ -24,11 +24,3 @@
 
 <script setup>
 </script>
-
-<style>
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-</style>

@@ -1,5 +1,5 @@
 /*
- * @Descripttion: 
+ * @Descripttion:
  * @Author: zhangchong zc16607@gmail.com
  * @Date: 2022-12-29 17:05:04
  * @LastEditors: zhangchong zc16607@gmail.com
@@ -209,7 +209,7 @@ async function reactToIpcObjectData(data, tabbedWin, viewContents) {
 // 最大化或恢复窗口大小
 function maximiseOrRestoreWin(tabbedWin, viewContents) {
   // TODO: titleBarOverlay temp workaround.
-  if (platform === 'win32') {
+  if (platform === 'win32' || platform === "linux") {
     if (tabbedWin.win.isMaximized()) {
       tabbedWin.win.unmaximize()
       viewContents.send('fromMain', 'restoreWin')
